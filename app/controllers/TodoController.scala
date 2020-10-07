@@ -1,13 +1,12 @@
-package controllers.api
+package controllers
 
 import javax.inject._
 import play.api.mvc._
 import play.api.libs.json._
 import models.{Todo, TodoForm}
 import play.api.data.FormError
-import play.api.routing.Router.empty.routes
-import services.TodoService
 
+import services.TodoService
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
