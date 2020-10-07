@@ -1,4 +1,4 @@
-package controllers
+package controllers.api
 
 import javax.inject._
 import play.api.mvc._
@@ -10,8 +10,10 @@ import services.TodoService
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
+
 class TodoController @Inject()(
-                                cc: ControllerComponents
+                                cc: ControllerComponents,
+                                todoService: TodoService
                               ) extends AbstractController(cc) {
 
   implicit val todoFormat = Json.format[Todo]
@@ -56,8 +58,7 @@ class TodoController @Inject()(
 
   def delete(id: Long) = Action.async { implicit request: Request[AnyContent] =>
     todoService.deleteItem(id) map { res =>
-      Redirect(routes.TodosController.getAll)
+      Redirect(routes.TodoController.getAll)
     }
   }
 }
-
