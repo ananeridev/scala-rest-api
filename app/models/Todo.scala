@@ -1,4 +1,5 @@
-package models<br>import com.google.inject.Inject
+package models
+import com.google.inject.Inject
 import play.api.data.Form
 import play.api.data.Forms.mapping
 import play.api.data.Forms._
@@ -7,7 +8,7 @@ import slick.jdbc.JdbcProfile
 import scala.concurrent.{ExecutionContext, Future}
 import slick.jdbc.MySQLProfile.api._
 
-case class Todo (id: Long, name: String, isComplete: Boolean) {
+case class Todo (id: Long, name: String, isComplete: Boolean)
 
   case class TodoFormData(name: String, isComplete: Boolean)
 
@@ -71,5 +72,4 @@ case class Todo (id: Long, name: String, isComplete: Boolean) {
     }
   }
 
-}
 
