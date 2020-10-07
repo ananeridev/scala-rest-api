@@ -5,9 +5,9 @@ import models.Todo
 import play.api.libs.json.Json
 import play.api.mvc.{AbstractController, ControllerComponents}
 
-class TodoController @Inject() (
-                               cc: ControllerComponents
-                               ) extends AbstractController(cc) {
+class TodoController @Inject()(
+                                cc: ControllerComponents
+                              ) extends AbstractController(cc) {
 
   implicit val todoFormat = Json.format[Todo]
 
@@ -15,5 +15,4 @@ class TodoController @Inject() (
     val todo = new Todo(1, "item 1", false)
     Ok(Json.toJson(todo))
   }
-
 }
