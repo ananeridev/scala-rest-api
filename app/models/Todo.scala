@@ -2,6 +2,6 @@ package models
 
 class Todo {
 
-  case class Todo(id: Long, name: String, isComplete: Boolean)
+  case class Todo(id: Int, name: String, isComplete: Boolean)
 
 }
