@@ -10,5 +10,9 @@ GET     /                           controllers.HomeController.index
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 
-#  api controllers mapping
-GET     /api/todos                  controllers.TodoController.getAll
+# api controllers mapping
+GET     /api/todos                  controllers.api.TodoController.getAll
+GET     /api/todos/:id                  controllers.api.TodoController.getById(id: Long)
+POST    /api/todos/add              controllers.api.TodoController.add
+PUT     /api/todos/update/:id           controllers.api.TodoController.update(id: Long)
+DELETE /api/todos/delete/:id         controllers.api.TodoController.delete(id: Long)
