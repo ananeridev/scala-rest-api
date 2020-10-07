@@ -1,5 +1,6 @@
 logs
 target
+/.g8
 /.idea
 /.idea_modules
 /.classpath
